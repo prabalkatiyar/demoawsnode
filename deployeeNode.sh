@@ -1,10 +1,10 @@
 #!/bin/bash
 
 Date1=`date +%Y%m-%b`
-Date2=`date +%Y%m%d`
+Date2=`date +%Y%m%d-%T`
 parent_directory="/nfs-vol1/deployement/node"
-#path="/home/ec2-user/homeFolder"
-#projectName="demoAwsNode"
+#path="/home/prabalkatiyar/HomeFolder/prabalFolder"
+#warfile="rkistatusupdation"
 deploymentpath="/var/www/html"
 while getopts p:w: flag
 do
@@ -14,7 +14,7 @@ do
         esac
 done
 
-if [ -d $path -a -d $path/$projectName/ ]
+if [ -d $path -a -d $path/$projectName ]
 then
 
 #mkdir -p "$parent_directory"/"$Date1"/"$Date2"/{backup,deployee}
@@ -27,10 +27,10 @@ sleep 5
 sudo cp -r $path/$projectName $parent_directory/$projectName/$Date1/$Date2/deployee
 sleep 5
 
-sudo rm -rf $deploymentpath/$projectName/*
+sudo rm -rf $deploymentpath/$projectName
 sleep 5
 
-sudo cp -r $parent_directory/$projectName/$Date1/$Date2/deployee/$projectName/* $deploymentpath/$projectName
+sudo cp -r $parent_directory/$projectName/$Date1/$Date2/deployee/$projectName $deploymentpath
 sleep 5
 
 else
