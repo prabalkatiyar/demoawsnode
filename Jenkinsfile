@@ -3,8 +3,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'chmod 777 deploy.sh'
-                sh './deploy.sh -w demoaws -p /var/lib/jenkins/workspace/demoAwsPipeline2/target'                
+                sh 'chmod 777 deployNode.sh'
+                sh './deployNode.sh -w demoAwsNode -p /home/ec2-user/homeFolder'                
             }
         }   
 }
