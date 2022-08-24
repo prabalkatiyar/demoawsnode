@@ -3,8 +3,8 @@
 Date1=`date +%Y%m-%b`
 Date2=`date +%Y%m%d`
 parent_directory="/nfs-vol1/deployement/node"
-#path="/home/prabalkatiyar/HomeFolder/prabalFolder"
-#warfile="rkistatusupdation"
+#path="/home/ec2-user/homeFolder"
+#projectName="demoAwsNode"
 deploymentpath="/var/www/html"
 while getopts p:w: flag
 do
@@ -14,7 +14,7 @@ do
         esac
 done
 
-if [ -d $path -a -d $path/$projectName ]
+if [ -d $path -a -d $path/$projectName/ ]
 then
 
 #mkdir -p "$parent_directory"/"$Date1"/"$Date2"/{backup,deployee}
