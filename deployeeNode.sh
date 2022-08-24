@@ -36,3 +36,7 @@ sleep 5
 else
         echo "Directory or file does not exist"
 fi
+
+npm i
+
+pm2 reload $projectName
